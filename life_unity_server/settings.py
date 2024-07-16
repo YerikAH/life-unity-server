@@ -150,5 +150,6 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=90),  # Duración del token de acceso
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),  # Duración del token de acceso
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=40),  # Duración del token de refresco
 }
