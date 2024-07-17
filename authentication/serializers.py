@@ -27,6 +27,7 @@ class UserSerializer(ModelSerializer):
             self.fields['first_name'].required = False
             self.fields['last_name'].required = False
             self.fields['email'].required = False
+            self.fields['username'].required = False
             # Puedes hacer opcional cualquier otro campo necesario
 
     def create(self, validated_data):
