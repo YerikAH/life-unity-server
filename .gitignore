@@ -1,0 +1,7 @@
+venv
+.env
+recipes/migrations
+recipes/__pycache__
+nutrition/migrations
+nutrition/__pycache__
+images
