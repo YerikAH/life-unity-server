@@ -9,6 +9,7 @@ class NutritionPersonalDetailsViewSet(ModelViewSet):
     queryset = NutritionPersonalDetails.objects.all()
     serializer_class = NutritionPersonalDetailsSerializer
     permission_classes = [IsAuthenticated]
+    
 
 class ValuesConsumedPerDayViewSet(ModelViewSet):
     queryset = ValuesConsumedPerDay.objects.all()
