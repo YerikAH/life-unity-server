@@ -28,11 +28,12 @@ class NutritionPersonalDetails(models.Model):
 
 class ValuesRecommendedPerDay(models.Model):
   id_nutrition_personal_details = models.ForeignKey(NutritionPersonalDetails, on_delete=models.CASCADE, db_column='id_nutrition_personal_details', null=True)
-  carbs = models.FloatField()
-  protein = models.FloatField()
-  fat = models.FloatField()
-  cals = models.FloatField()
-  water = models.FloatField()
+  carbs = models.FloatField(null=True)
+  protein = models.FloatField(null=True)
+  fat = models.FloatField(null=True)
+  cals = models.FloatField(null=True)
+  water_liters = models.FloatField(null=True)
+  water_cups = models.IntegerField(null=True)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
   class Meta:
@@ -43,15 +44,15 @@ class ValuesRecommendedPerDay(models.Model):
 
 class ValuesConsumedPerDay(models.Model):
   id_user = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='id_user',null=True)
-  total_carbs = models.FloatField()
-  total_protein = models.FloatField()
-  total_fat = models.FloatField()
-  total_cals = models.FloatField()
-  total_water = models.FloatField()
+  total_carbs = models.FloatField(null=True, default=0)
+  total_protein = models.FloatField(null=True, default=0)
+  total_fat = models.FloatField(null=True, default=0)
+  total_cals = models.FloatField(null=True, default=0)
+  total_water = models.FloatField(null=True, default=0)
   created_at = models.DateTimeField(auto_now_add=True)
   updated_at = models.DateTimeField(auto_now=True)
   class Meta:
     db_table = 'values_consumed_per_day'
     
   def __str__(self):
-    return self.id_nutrition_personal_details
+    return str(self.id_user.first_name)
