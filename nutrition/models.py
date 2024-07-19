@@ -3,7 +3,7 @@ from authentication.models import UserModel
 
 # Create your models here.
 class NutritionPersonalDetails(models.Model):
-  id_user = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='id_user',null=True)
+  id_user = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='id_user', null=True)
   weight = models.FloatField()
   height = models.FloatField()
   birth_date = models.DateField()

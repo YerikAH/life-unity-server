@@ -34,20 +34,29 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
-INSTALLED_APPS = [
+INSTALLED_LOCAL = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+INSTALLED_LIBRARY = [
+    'rest_framework',
     'corsheaders',
+]
+
+INSTALLED_APPS_LOCAL = [
     'authentication',
     'nutrition',
     'recipes',
-    'rest_framework',
+    'kanban',
 ]
+
+
+INSTALLED_APPS = INSTALLED_LOCAL + INSTALLED_LIBRARY + INSTALLED_APPS_LOCAL
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -88,8 +97,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'life_unity_db',
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'USER': 'postgres',              # os.environ.get('DB_USER'),
+        'PASSWORD': 'root',          # os.environ.get('DB_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
     }
