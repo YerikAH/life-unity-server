@@ -1,6 +1,0 @@
-venv
-.env
-recipes/__pycache__
-nutrition/__pycache__
-kanban/__pycache__
-images
