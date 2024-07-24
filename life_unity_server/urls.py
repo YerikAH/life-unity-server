@@ -6,10 +6,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/', include('authentication.urls')),
     path('api/v1/', include('nutrition.urls')),
+    path('api/v1/', include("kanban.urls"))
 ]
 
 # Configuración para servir archivos de medios durante el desarrollo

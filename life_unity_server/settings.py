@@ -45,6 +45,7 @@ INSTALLED_LOCAL = [
 
 INSTALLED_LIBRARY = [
     'rest_framework',
+    'rest_framework_simplejwt',
     'corsheaders',
 ]
 
@@ -55,14 +56,13 @@ INSTALLED_APPS_LOCAL = [
     'kanban',
 ]
 
-
 INSTALLED_APPS = INSTALLED_LOCAL + INSTALLED_LIBRARY + INSTALLED_APPS_LOCAL
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "corsheaders.middleware.CorsMiddleware",
-    'django.middleware.common.CommonMiddleware',
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -153,6 +153,8 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+
+# CORS_ALLOW_ALL_ORIGINS: True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",

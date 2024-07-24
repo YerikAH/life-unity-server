@@ -6,8 +6,8 @@ from authentication.models import UserModel
 class Board(models.Model):
     board_name = models.CharField(max_length=100, null=False, blank=False)
     board_description = models.TextField(null=True, blank=True)
-    color = models.CharField(max_length=100)
-    id_user = models.ForeignKey(UserModel, on_delete=models.CASCADE, null=True, name='id_user')
+    color = models.CharField(max_length=100, null=True, blank=True)
+    user_id = models.ForeignKey(UserModel, on_delete=models.CASCADE, null=True, name='user_id')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

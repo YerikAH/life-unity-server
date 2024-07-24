@@ -4,5 +4,6 @@ recipes/migrations
 recipes/__pycache__
 nutrition/migrations
 nutrition/__pycache__
+kanban/migrations
 images
 .idea
