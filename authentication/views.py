@@ -1,6 +1,7 @@
 from rest_framework.exceptions import ValidationError
 from .models import UserModel
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.views import APIView
 from .serializers import UserSerializer
 from rest_framework.response import Response
 from rest_framework import status
@@ -18,3 +19,12 @@ class UserViewSet(ModelViewSet):
             return response
         except ValidationError as e:
             return Response({'error': 'No se puede crear el usuario', "content": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, *args, **kwargs):
+        try:
+            # Llama al método update original de ModelViewSet
+            response = super(UserViewSet, self).update(
+                request, *args, **kwargs)
+            return response
+        except ValidationError as e:
+            return Response({'error': 'No se puede actualizar el usuario', "content": str(e)}, status=status.HTTP_400_BAD_REQUEST)
