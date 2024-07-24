@@ -7,3 +7,6 @@ nutrition/__pycache__
 kanban/migrations
 images
 .idea
+authentication/migrations
+authentication/__pycache__
+kanban/migrations
