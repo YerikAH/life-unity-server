@@ -47,6 +47,7 @@ INSTALLED_LIBRARY = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'django_filters'
 ]
 
 INSTALLED_APPS_LOCAL = [
