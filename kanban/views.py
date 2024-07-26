@@ -2,12 +2,15 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from .models import Board, SubCard, Cards
 from .serializers import BoardSerializer, CardSerializer, SubCardSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 class BoardViewSet(ModelViewSet):
     queryset = Board.objects.all()
     serializer_class = BoardSerializer
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['id_user']
 
 class CardViewSet(ModelViewSet):
     queryset = Cards.objects.all()
