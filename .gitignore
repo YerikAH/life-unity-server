@@ -1,0 +1,9 @@
+venv
+.env
+recipes/__pycache__
+recipes/migrations
+nutrition/__pycache__
+nutrition/migrations
+kanban/__pycache__
+kanban/migrations
+life_unity_server/__pycache__
